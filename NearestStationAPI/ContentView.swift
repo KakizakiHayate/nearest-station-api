@@ -15,12 +15,10 @@ struct ContentView: View {
                 Text("\($0.name)")
             }
         }.padding()
-        .onAppear {
-            Task {
+            .task {
                 await contentViewModel.fetchAPI(lat: "139.9342237591793",
                                                 lon: "35.83270107269758")
             }
-        }
     }
 }
 
